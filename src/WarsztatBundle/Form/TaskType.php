@@ -13,7 +13,7 @@ class TaskType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('price')->add('date')->add('duration')->add('location');
+        $builder->add('price')->add('date', 'date', ['years' => range(2017, 2038)])->add('duration')->add('location');
     }
     
     /**

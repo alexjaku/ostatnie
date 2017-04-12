@@ -21,7 +21,7 @@
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.surname }}</td>
-                <td>{% if user.birthDate %}{{ user.birthDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if user.birthDate %} {{ user.birthDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ user.phone }}</td>
                 <td>{{ user.photo }}</td>
                 <td>
