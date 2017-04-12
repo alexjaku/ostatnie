@@ -1,0 +1,60 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace WarsztatBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ */
+class User extends BaseUser
+{   
+    // ORM tylko do Id
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * 
+     * @ORM\Column(type="string") 
+     */
+    protected $name;
+    
+    /**
+     * 
+     * @ORM\Column(type="string")
+     */
+    protected $surname;
+    
+    /**
+     * 
+     * @ORM\Column(type="date")
+     */
+    protected $birthDate;  
+    
+    /**
+     * 
+     * @ORM\Column(type="integer")
+     */
+    protected $phone;
+    
+    /**
+     * 
+     * @ORM\Column(type="blob")
+     */
+    protected $photo;
+           
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Offer</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offer.id }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ offer.price }}</td>
+            </tr>
+            <tr>
+                <th>Usertaskid</th>
+                <td>{{ offer.userTaskId }}</td>
+            </tr>
+            <tr>
+                <th>Userofferid</th>
+                <td>{{ offer.userOfferId }}</td>
+            </tr>
+            <tr>
+                <th>Taskid</th>
+                <td>{{ offer.taskId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('offer_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('offer_edit', { 'id': offer.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
